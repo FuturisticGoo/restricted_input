@@ -26,10 +26,10 @@ from restricted_input import r_input
 
 `r_input` is the function which can be used instead of `input()`  
 
-It has three arguments
+It has five arguments
 
 ```python
-variable = r_input(prompt, input_type, exclude)
+variable = r_input(prompt, input_type, exclude, maxlength, warning)
 ```
 
 * `prompt`: is the prompt to be given for the input dialog. `string`  
@@ -66,11 +66,15 @@ variable = r_input(prompt, input_type, exclude)
 
   If you want to allow input of the character `v`, `a`,`b` and `g` in version type input, use:
 
-  ```pyth
+  ```python
   r_input("Enter the version: ", "version", "vabg")
   # Or
   r_input("Enter the version: ", "version", ["v", "a", "b", "g"])
   ```
+  
+* `maxlength`: is the argument for maximum length for input. Useful in scenarios where only single character is required.`integer`
+
+* `warning`: is the argument for any warnings is the user has entered something which isn't allowed. `string`
 
 ## Example
 

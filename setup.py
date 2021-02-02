@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="restricted_input",
-    version="0.1.0",
+    version="0.2.0",
     description="Alternative to classic input with support for restricting certain characters",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -13,7 +13,7 @@ setup(
     author_email="fgoo.edu@hash.fyi",
     license="MIT",
     python_requires=">= 3.6",
-    keywords=["input","restricted","getpass","integer","filter","smart"],
+    keywords=["input","filter input", "restricted","getpass","integer","filter","smart"],
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
