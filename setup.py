@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="restricted_input",
-    version="0.2.0",
+    version="0.3.0",
     description="Alternative to classic input with support for restricting certain characters",
     long_description=long_description,
     long_description_content_type="text/markdown",

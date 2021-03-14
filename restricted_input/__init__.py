@@ -14,7 +14,7 @@ import platform
 import sys
 
 
-def r_input(prompt="", input_type="normal", exlude="",
+def r_input(prompt="", input_type="normal", allow="",
             maxlength=-1, warning=""):
     """
 
@@ -26,7 +26,7 @@ def r_input(prompt="", input_type="normal", exlude="",
     input_type : string, optional
         DESCRIPTION. Type of input. print(get_input_types()) for printing all \
 input types. The default is "normal".
-    exlude : str/list, optional
+    allow : str/list, optional
         DESCRIPTION. The string or list of strings containing the characters \
 which is to be allowed in input. The default is "".
     maxlength : int, optional
@@ -99,7 +99,7 @@ allowed. The default is "".
 
                 elif(input_type == "string_all"): 
                     # Allows strings. Exceptions can be added
-                    if(temp.isalpha() or temp in exlude):
+                    if(temp.isalpha() or temp in allow):
                         ask += temp
                         print(temp, end="", flush=True)
                     elif(warning):
@@ -111,7 +111,7 @@ allowed. The default is "".
 
                 elif(input_type == "string_upper"):
                     # Allows only uppercase strings. Exceptions can be added
-                    if((temp.isalpha() and temp.isupper()) or temp in exlude):
+                    if((temp.isalpha() and temp.isupper()) or temp in allow):
                         ask += temp
                         print(temp, end="", flush=True)
                     elif(warning):
@@ -123,7 +123,7 @@ allowed. The default is "".
 
                 elif(input_type == "string_lower"):
                     # Allows only lowercase strings. Exceptions can be added
-                    if((temp.isalpha() and temp.islower()) or temp in exlude):
+                    if((temp.isalpha() and temp.islower()) or temp in allow):
                         ask += temp
                         print(temp, end="", flush=True)
                     elif(warning):
@@ -136,7 +136,7 @@ allowed. The default is "".
                 elif(input_type == "specials"):
                     # Allows only special characters defined in list special_char.
                     # Exceptions can be added
-                    if(temp in special_char or temp in exlude):
+                    if(temp in special_char or temp in allow):
                         ask += temp
                         print(temp, end="", flush=True)
                     elif(warning):
@@ -149,7 +149,7 @@ allowed. The default is "".
                 elif(input_type == "integer"):
                     # Allows only integers. Full stop/period and comma not allowed
                     # Exceptions can be added
-                    if(temp.isdigit() or temp in exlude):
+                    if(temp.isdigit() or temp in allow):
                         ask += temp
                         print(temp, end="", flush=True)
                     elif(warning):
@@ -162,7 +162,7 @@ allowed. The default is "".
                 elif(input_type == "float"):
                     # Allows integers and one instance of full stop/period
                     # Comma not allowed. Exceptions can be added
-                    if((temp.isdigit() or temp == ".") or temp in exlude):
+                    if((temp.isdigit() or temp == ".") or temp in allow):
                         if(ask.find(".") == -1):
                             ask += temp
                             print(temp, end="", flush=True)
@@ -179,7 +179,7 @@ allowed. The default is "".
                 elif(input_type == "version"):
                     # Allows integers and any number of full stop/period
                     # Comma not allowed. Exceptions can be added
-                    if((temp.isdigit() or temp == ".") or temp in exlude):
+                    if((temp.isdigit() or temp == ".") or temp in allow):
                         ask += temp
                         print(temp, end="", flush=True)
                     elif(warning):
@@ -194,7 +194,7 @@ allowed. The default is "".
                     # Useful in scenarios where you only need input
                     # like 1/2/3, by adding exclude="123" to the 
                     # r_input arguments
-                    if(temp in exlude):
+                    if(temp in allow):
                         ask += temp
                         print(temp, end="", flush=True)
                     elif(warning):

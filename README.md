@@ -1,5 +1,12 @@
 # Restricted Input
 
+### *Important Change*
+
+*Made a small backward incompatible change. Instead of `exclude`, use `allow`. I changed it because:*  
+
+1. *There was a typo anyway. It was `exlude` instead of `exclude`!*
+2. *I feel like `allow` has a better and clearer meaning than `exclude`. `exclude` might be confusing sometimes.* 
+
 ## Overview
 
 A way of imposing restrictions in `input()`.  
@@ -29,7 +36,7 @@ from restricted_input import r_input
 It has five arguments
 
 ```python
-variable = r_input(prompt, input_type, exclude, maxlength, warning)
+variable = r_input(prompt, input_type, allow, maxlength, warning)
 ```
 
 * `prompt`: is the prompt to be given for the input dialog. `string`  
@@ -56,7 +63,7 @@ variable = r_input(prompt, input_type, exclude, maxlength, warning)
   print(get_input_types)
   ```
 
-* `exclude`: is the argument for allowing certain characters.  `string or list`
+* allow: is the argument for allowing certain characters.  `string or list`
 
    For example, if you want to allow hyphens in `integers`, you can use
 
